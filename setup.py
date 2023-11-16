@@ -295,7 +295,7 @@ long_description = (this_directory / "README.md").read_text()
 
 setup(
     name="distributed_compy",
-    version="1.0.49",
+    version="1.0.50",
     description=('Distributed hybrid (multi-node) heterogeneous (CPU + multi-GPU) computing library. Utilizes and '
                  'requires CUDA toolkit, OpenMP, and OpenMPI.'),
     author="nellogan",
