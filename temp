@@ -1,0 +1,27 @@
+Distributed_compy is a distributed computing library that offers multi-node (hybrid -- more than one machine)
+and heterogeneous (CPU + mult-GPU), and multi-threading paradigms to leverage the processing power of a cluster.
+Cython is used to generate glue code for the core C++ functions and provide wrappers to call from Python.
+Requires numpy, CUDA toolkit>=2.0, OpenMP, and OpenMPI. Note: this library does not use the popular mpi4py library for
+internode communication.
+
+Features:
+    - Get/set/configure bandwidths of local node or entire cluster whether by supplied numpy array or from binary data files
+    - Code generator to write temporary python files that are to be executed on each node
+    - Execute mpirun command from master node with default env var or configurable hostfile
+    - Reduction sum with functionality scaling such as python naive sum, multi-threaded reduction sum,
+      multi-gpu reduction sum, heterogeneous reduction sum, and hybrid heterogeneous reduction sum.
+
+Additional features such as dot product, matrix multiplication, image processing kernels, neural networks
+and finite element method functions planned for future releases.
+
+
+
+
+bandwidth of not only CPU and GPUs on current node, but all nodes on cluster specified by hostfile. '
+Customization available -- set local/network file paths, and set hostfile to control which nodes are '
+used. Includes configuration functions to automatically (or manually) set '
+local/cluster bandwidths, and code generators that generate local copy of python file(s) to be '
+executed by each node on cluster. '
+Utilizes and requires CUDA toolkit, OpenMP, and OpenMPI. Core functions written in C++, compiled '
+and wrapped with Cython to be accessible from Python. Does not require Cython or '
+anything other than numpy>=1.0.'
