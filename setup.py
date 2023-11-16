@@ -300,6 +300,7 @@ setup(
                  'requires CUDA toolkit, OpenMP, and OpenMPI.'),
     author="nellogan",
     author_email='1nel.logan1@gmail.com',
+    url='https://github.com/nellogan/distributed_compy',
     packages=find_packages(),
     setup_requires=[
         'numpy'
