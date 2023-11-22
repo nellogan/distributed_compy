@@ -1,0 +1,93 @@
+"""Distributed_compy
+
+Distributed_compy is a powerful distributed computing library that harnesses the processing power of a cluster through multi-threading, heterogeneous (CPU + multiple GPUs), and multi-node (hybrid cluster) paradigms. It utilizes Cython to generate glue code for its core C/C++ functions and provides wrappers for seamless Python integration. The library requires numpy, CUDA toolkit>=2.0, OpenMP, and OpenMPI (Note: it does not use the mpi4py library).
+
+Key Features:
+
+- **Bandwidth Management:** Efficiently manage and configure bandwidths for both the local node and the entire cluster.
+
+- **Flexible Code Generation:** Generate temporary binary data files or Python files tailored for execution on each node within the cluster.
+
+- **MPI Command Execution:** Execute the mpirun command from the master node using default environment variables or a configurable hostfile.
+
+- **Versatile Reduction Operations:** Perform reduction sum operations with a range of optimization levels, including Python naive sum, multi-threaded reduction sum, multi-GPU reduction sum, heterogeneous reduction sum, and hybrid heterogeneous reduction sum.
+
+- **Future Enhancements:** Continuous development efforts are focused on expanding the library's capabilities to include additional reduction operations, dot product, matrix multiplication, image processing kernels, neural networks, and finite element method functions.
+
+"""
+
+# Import statements
+from setuptools import setup, Extension, find_packages
+import numpy as np
+import os
+from os.path import join as pjoin
+from pathlib import Path
+
+# ... (rest of the imports)
+
+def find_in_path(name, path):
+    """Find a file in a search path"""
+    # ...
+
+def locate_cuda():
+    """Locate the CUDA environment on the system"""
+    # ...
+
+def locate_mpi():
+    """Locate the MPI environment on the system"""
+    # ...
+
+# ... (rest of the code)
+
+class CustomBuildExt(build_ext):
+    """Custom build_ext class to enable CUDA compilation"""
+    # ...
+
+def main():
+    """Main entry point for the script."""
+    # ...
+
+if __name__ == "__main__":
+    main()
+
+**Function Documentation:**
+
+**find_in_path(name, path)**
+
+Searches the specified path for a file with the given name.
+
+**Parameters:**
+
+- `name`: The name of the file to search for.
+
+- `path`: The path to search within.
+
+**Returns:**
+
+- The absolute path to the file if found, or None if not found.
+
+**locate_cuda()**
+
+Locates the CUDA environment on the system and returns a dictionary containing paths to the CUDA home directory, nvcc compiler, include directory, and library directory.
+
+**Returns:**
+
+- A dictionary containing the paths to the CUDA environment components.
+
+**locate_mpi()**
+
+Locates the MPI environment on the system and returns a dictionary containing the path to the OpenMPI include directory.
+
+**Returns:**
+
+- A dictionary containing the path to the OpenMPI include directory.
+
+**CustomBuildExt Class:**
+
+This custom build_ext class enables CUDA compilation by setting the appropriate compiler flags and environment variables.
+
+**main() Function:**
+
+The main entry point for the script. Handles the initialization and setup of the distributed_compy library.
+
+**Overall, the distributed_compy library provides a comprehensive set of tools for harnessing the power of distributed computing across various hardware configurations. Its comprehensive documentation and well-structured code make it accessible to developers of all levels.**
